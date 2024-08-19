@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+}
+
+.image {
+    height: 750px;
+    aspect-ratio: 1.1;
+}
+

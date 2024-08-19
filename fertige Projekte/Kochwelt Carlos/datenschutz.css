@@ -1,0 +1,56 @@
+@import url(../components/templates/header-component/header.css);
+@import url(../components/templates/footer-component/footer-style.css);
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(../components/font-family/Raleway-VariableFont_wght.ttf);
+    font-weight: 400;
+}
+
+.main {
+    display:flex;
+    flex-direction: column;
+    margin-left: clamp(40px, 15vw, 160px);
+    margin-right: clamp(40px, 15vw, 100px);
+    margin-bottom: 40px;
+    width: clamp(250px, 65vw, 1400px);
+    
+}
+.overflow{
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+h4 {
+    margin-top: 40px;
+}
+
+.imph1 {
+    margin-top: 40px;
+}
+
+@media(max-width: 550px){
+    .overflow{
+        overflow: hidden;
+    }
+}
+
+@media (max-width:800px){
+    .main {
+        margin-left: 5vw;
+        margin-right: 5vw;
+
+    }
+    }
+
+    @media (min-width:1990px){
+        .main {
+            align-self: center;
+            margin-left: 0px;
+        }
+        }

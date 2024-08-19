@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt</title>
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style-kontakt-markus-severin-v3.css" />
+    <script src="./script.js"></script>
+    <script src = "../components/templates/header-component/header.js"></script>
+    <script src="../components/templates/w3-script.js"></script>
+  </head>
+
+  <body onload="includeHTML()">
+    <div w3-include-html="../components/templates/header-component/header.html"></div>
+
+    <section class="main-content">
+      <div class="bg-image"></div>
+      <form class="content" onsubmit="sendMail(event)">
+            <label> Bitte teilen Sie uns ihr Anliegen mit </label>
+            <label>
+              Wie sollen wir Sie nennen? :
+              <input required type="text" name="name" />
+            </label>
+            <label>
+              Ihre E-mail adresse für unsere Antwort :
+              <input required type="email" name="email" />
+            </label>
+            <label>
+              Wie können wir Ihnen helfen? :
+              <textarea required name="message"></textarea>
+            </label>
+            <button type="submit">Abschicken</button>
+          </form>
+    </section>
+    
+    <div w3-include-html="../components/templates/footer-component/footer-component.html"></div>
+  </body>
+</html>
