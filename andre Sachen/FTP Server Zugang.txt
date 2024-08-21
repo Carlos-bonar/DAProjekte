@@ -1,7 +1,0 @@
-FTP-Zugangsdaten
-URL
-carlos-becker.developerakademie.net
-Benutzername
-f01680ba
-Passwort
-o9AZPipC
