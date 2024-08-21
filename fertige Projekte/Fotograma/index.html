@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imgfotog/favicon_fotogram.png" type="image/x-icon">
+    <title>Fotogram</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="loadPics()">
+    <div class="overflowhidden">
+        <header>
+            <div class="fotoheadercontent">
+                <img class="logofotgr" src="./imgfotog/logo_fotogram.svg" alt=" Logo_fotograma">
+            </div>
+        </header>
+        <div class="centerit">
+            
+            <div class="main">
+                <p><h1 id="h1">El paraíso del Porma</h1></p>
+                <h2>oder Wandern mit Balder</h2>
+                <div class="fotofolder" >
+                    
+                    <div id="fotocontent" class="fotocontent">
+                      
+                    </div>    
+                </div>
+                <div onclick="toggleOverlay()" id="overlay" class="hide overlay">
+                   <div class="fotocoverlay">
+                        <div id="bigslide" class="bigslide" >
+                    </div>
+                    <div class="btns">
+                        <button id="buttdownid" class="downbutton icons" onclick="slider(0, event)" ><img src="./icons/back.svg" alt="" class="downbuttimg icons" ></button>
+                        <button id="playbutton" class="playbutton icons" onclick="startSlideshow(0, event);"><img class="sliderbutton icons" id="playbuttonimg" src="./icons/play.svg" alt=""></button>
+                        <button id="buttupid" class="upbutton icons" onclick=" slider(1, event);"><img src="./icons/next.svg" alt="Next" class="upbuttimg icons" ></button>
+                    </div>
+                </div>
+                    
+                
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        
+            <p class="footertext"> Erstellt von Carlos & Balder</p>
+            <img class="balder" src="./imgfotog/Balder.jpg" alt="Balder">
+        
+    </footer>
+</body>
+</html>

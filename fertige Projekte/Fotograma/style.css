@@ -1,0 +1,289 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    background-color: rgb(39, 39, 39);
+    min-height: 100vh;
+}
+.overflowhidden{
+    display:flex;
+    flex-direction: column;
+}
+
+header {
+    height: 120px;
+    width: 100%;
+    background-color: rgb(8, 32, 41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fotoheadercontent{
+    width: clamp(320px, 100%, 1424px);
+}
+
+h1{
+    color : white;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2{
+    margin-top: 0;
+    color: white;
+}
+
+.logofotgr{
+    height: 80px;
+    margin-left: 16px;
+}
+
+.centerit{
+   display:flex;
+   flex:1;
+    margin-top: 16px;
+}
+
+.main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.fotofolder{
+    width: clamp(265px, 95vw, 1200px);
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.exmimg{
+    height: 210px;
+    width: 210px;
+    object-fit: cover;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.exmimg:hover{
+    position: relative;
+    bottom: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;;
+    height: 240px;
+    width: 240px;
+    object-fit: cover;
+    box-shadow:
+  0px 0px 2.6px rgba(255, 255, 255, 0.043),
+  0px 0px 5.8px rgba(255, 255, 255, 0.062),
+  0px 0px 9.9px rgba(255, 255, 255, 0.077),
+  0px 0px 15.3px rgba(255, 255, 255, 0.089),
+  0px 0px 22.6px rgba(255, 255, 255, 0.101),
+  0px 0px 33.3px rgba(255, 255, 255, 0.113),
+  0px 0px 49.9px rgba(255, 255, 255, 0.128),
+  0px 0px 79.5px rgba(255, 255, 255, 0.147),
+  0px 0px 149px rgba(255, 255, 255, 0.19);
+}
+
+.overlay{
+    position: absolute;
+    top:120px;
+    left: 0;
+    right: 0;; 
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.400);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+
+.fotocontent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fotocoverlay{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: clamp(450px, 900px, 800px);
+    width: clamp(320px, 2000px, 1200px);
+    overflow:hidden;
+    background-color: rgb(8, 32, 41);
+}
+
+.bigslide{
+    position : relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(450px, 900px, 800px);
+    width: clamp(320px, 2000px, 1066px);
+    overflow:hidden;
+    background-color: rgb(8, 32, 41);   
+}
+
+.bigimg{
+    position : absolute;
+    height: clamp(400px, 50vh, 600px);
+    width: clamp(300px, auto, 400px);
+    display: block;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.btns{
+    display:flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: clamp(280px, 80%, 740px);
+    margin-bottom: 16px;
+}
+.icons{
+    height: 80px;
+    width: 80px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.icons:hover{
+    cursor: pointer;
+}
+
+.playbutton{
+    z-index: 1000;
+}
+
+.upbutton{
+
+    z-index: 1000;
+}
+
+.downbutton{
+
+    z-index: 1000
+}
+
+footer{
+
+        height: 120px;
+        width: 100%;
+        background-color: rgb(8, 32, 41);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    
+}
+.footertext{
+
+    margin-left: 8px;
+}
+
+.balder {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+@media(max-width:1100px){
+    .fotocontent{
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .bigimg{
+        position : absolute;
+        top: 30px;
+        height: 400px;
+        width: auto;
+        display: block;
+        
+    }
+}
+
+@media (max-width:850px) {
+    .overlay{
+        max-height: 480px;
+    }
+    .bigimg{
+        position : absolute;
+        top: 30px;
+        height: 240px;
+        width: auto;
+        display: block;
+    }
+
+    .bigslide{
+        max-height: 320px;
+    }
+
+    .icons{
+        height: 48px;
+        width: 48px;
+    }
+}
+
+
+
+@media (max-width:650px){
+    .logofotgr{
+        height: 48px;
+        margin-left: 8px;
+    }
+    
+}
+
+@media(max-width:450px){
+    
+
+    .exmimg{
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .bigimg{
+        position : absolute;
+        top: 30px;
+        height: 169px;
+        width: auto;
+        display: block;
+    }
+
+    .overlay{
+        min-height: auto;
+    }
+
+    .icons{
+        height: 48px;
+        width: 48px;
+    }
+}

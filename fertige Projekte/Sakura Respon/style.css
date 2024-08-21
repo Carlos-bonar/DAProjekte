@@ -1,0 +1,536 @@
+
+html {
+    scroll-behavior: smooth;
+    margin:0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+/* header style begins*/
+.startmain{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height: 100vh;
+    background-image:url("./img/1_hero/JPG/hero_bg.jpg");
+    background-size: cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content: flex-start;
+    flex-direction:column;
+    font-family: "Raleway", sans-serif;
+    color:white;
+    text-decoration: none;
+}
+.link
+{
+    text-decoration: none;
+    color: white;
+}
+.link:hover{
+   color: antiquewhite;
+   text-decoration: underline;
+}
+.tel-btn:hover{
+    background-color: red;
+}
+.uprow
+{
+    display:flex;
+    justify-content: space-around !important;
+    align-items: center;
+    flex-direction: row;
+    height: 112px;
+    width:100%;
+}
+.uprowlogo
+{
+    width: 64px;
+    height: 64px;
+}
+
+.navbar
+{
+    width: 40%;
+    font-size: 24px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+   
+    
+    
+}
+.tel-btn
+{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #9f0908;
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 10px;
+    width: auto;
+    height: 40%;
+    border: solid 3px white;
+    color: white;
+    text-decoration: none;
+
+    
+}
+.phone
+{
+    size:10px;
+    
+}
+.Gerflag{
+    height: 53px;
+    width: 61px;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    outline:0;
+}
+.Gerflagb{
+    padding:0;
+    border:none;
+    background-color: transparent;
+}
+.mainheadline
+{
+    
+    font-weight: bold;
+    font-size: 96px;
+    margin-top: 20%;
+}
+
+.haedlineslogan
+{
+    
+    font-size: 24px;
+}
+/* how to order style begins*/
+.howtomain
+{
+    margin-top:100vh;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap:64px;
+    font-family: "Raleway", sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    color:#9f0908;
+
+}
+.orderorder
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.pick
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:16px;
+    align-items:center;
+    color: #000000;
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+    padding:80px;
+    padding-top:0px;
+
+}
+
+.orderimg
+{
+    width:128px;
+    height:128px;
+}
+
+/* Menustyle begins*/
+.menumain
+{
+    background-image:url("./img/3_menu/JPG/section_our_menu_bg.jpg");
+    margin-top: 120px;
+    padding-top:120px;
+    padding-bottom: 120px;
+    padding-left: 160px;
+    padding-right: 160px;
+    display:flex;
+    flex-direction: column;
+    gap:64px;
+    
+    
+}
+.menuheadl
+{
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: 80px;
+    color:#9f0908;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 0px !important;
+   
+}
+.menuimg
+{
+    width: 352px;
+    height: 352px;;
+}
+
+.dishmenu
+{
+    display:flex;
+    font-family: "Raleway", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #675e54;
+    padding-bottom: 56px;
+}
+.dishmenu2
+{
+    display:flex;
+    justify-content: flex-end;
+    font-family: "Raleway", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #675e54;
+    padding-bottom: 56px;
+    gap:80px;
+
+}
+.dishhead
+{
+    font-family: "Economica", sans-serif;
+    font-weight: bold;
+    font-size: 56px;
+    font-style: normal;
+    color: #000000;
+    margin-bottom:16px;
+    padding-left: 80px;
+    
+}
+
+.listmenu
+{
+    display:flex;
+    flex-direction: column;
+    
+}
+.table
+{
+    display:flex;
+    justify-content: space-between;
+}
+.list
+{
+    padding-left: 80px;
+    padding-right: 200px;
+    gap:8px;
+}
+/*Find us at style begins*/
+.findmain
+{
+    margin-top: 120px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 24px;
+}
+.findheadl
+{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: 80px;
+    padding-bottom: 8px;
+    color:#9f0908
+}
+.findimg
+{
+    width: 1em;
+    height: 1em;
+}
+.address
+{
+    display:flex;
+}
+.google
+{
+    padding-top: 64px;
+    width:100%;
+}
+/* footer style begins */
+.bar
+{
+    height: 134px;
+    border-top: 10px solid white;
+    background-color: #0A141E;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.lefticon
+{
+    height: 44px;
+}
+.icon
+{
+    width: 40px;
+    height: 40px;
+}
+.footerlogo
+{
+    height: 40px;
+    aspect-ratio: 1/1;
+    padding-left: 16px;
+}
+
+@media (max-width:1310px)
+{
+    .link
+    {
+        display:none;
+    }
+    
+}
+@media (max-width:1100px)
+{
+    .dishmenu
+    {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 32px;
+        align-items: flex-start;
+    }
+    .dishmenu2
+    {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-bottom: 32px;
+        align-items: flex-start;
+        gap:24px;
+    }
+    .menuimg
+    {
+        align-self: center;
+    }
+}
+    
+
+ @media (max-width:960px)
+ {
+    h2
+    {
+        text-align: center;
+    }
+    .howtomain
+    {
+    padding-top: 39px;
+    }
+    .orderorder
+    {
+        flex-direction: column;
+    }
+ }
+ 
+@media (max-width:785px)
+{
+   .mainheadline
+   {
+       font-size:44px;
+       justify-self: center;
+   }   
+   .haedlineslogan
+   {
+       font-size: 16px;
+   }
+   .menumain
+   {
+    padding:0;
+   }
+   .menuheadl
+   {
+    font-size: 40px;
+   }
+   .menumain
+   {
+    gap:40px;
+   }
+   .dishmenu
+   {
+    align-items: center;
+   }
+   .dishmenu2
+   {
+    align-items: center;
+   }
+   .dishhead
+   {
+    margin-top: 24px;
+    padding-left: 0;
+    font-size: 32px;
+   }
+   .listmenu
+   {
+    justify-content: center;
+   }
+   .table
+   {
+    font-size: 24px;
+    justify-content: space-between;
+  
+    
+   }
+   .list{
+    padding-left: 0;
+    padding-right: 100px;
+   }
+   .menuimg
+   {
+    height:352px;
+    aspect-ratio: 1/1;
+    padding-left: 5px;
+    align-self: center;
+   }
+   .menuover
+   {
+    padding-bottom: 72px;
+   }
+   .findmain
+   {
+    margin-top:72px;
+   }
+}
+
+ @media (max-width: 603px)
+{
+    .uprowlogo
+    {
+        height:40px;
+        width:40px;
+    }
+    .tel-btn
+    {
+        font-size: 16px;
+        
+    }
+    .phone
+    {
+     size:5px;
+    }
+    .uprow
+    {
+        justify-content:space-around !important;
+        height: 64px;
+
+    }
+    .navbar
+    {
+        width:auto;
+    }
+    .mainheadline
+    {
+        margin-top: 40%;
+    }
+    h2
+    {
+        font-size: 40px;
+    }
+    .orderimg
+    {
+        width: 112px;
+        aspect-ratio: 1/1;
+    }
+    .pick
+    {
+       padding-bottom: 32px;
+       font-size: 32px;
+    }
+    .menumain
+    {
+        padding-top: 72px;
+        margin-top: 72px;
+    }
+    .findheadl
+    {
+        font-size: 40px;
+    }
+    .address
+    {
+        font-size: 16px;
+    }
+
+    footer
+    {
+        height: 86px;
+    }
+    .bar
+    {
+        border:none;
+        justify-content: space-between;
+    }
+    .lefticon
+    {
+        display:none;
+    }
+    .icon
+    {
+        width: 32px;
+        height: 32px;
+
+    }
+    .right
+    {
+        padding-right: 16px;
+    }
+}
+@media(min-width:603px)
+{
+    .footerlogo
+    {
+        display:none;
+        
+    }
+}
+@media(max-width:375px)
+{
+    .menuimg
+    {
+        width: 286px;
+        height: 286px;
+        align-self: center;
+    }
+    .list
+    {
+        padding-right: 80px;
+    }
+    h1
+    {
+        text-align: center;
+        
+    }
+    h2
+    {
+        text-align: center;    
+    }
+    
+}

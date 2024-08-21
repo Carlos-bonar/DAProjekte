@@ -1,0 +1,9 @@
+<button onclick="GER" class="Gerflagb"><img class="Gerflag" src="./img/Gerflag.jpg"></button>
+
+document.getElementById('uprl').innerHTML='Über';
+            document.getElementById('haedlineslogan').innerHTML='Das beste Ramen in der Stadt';
+
+
+            document.getElementById('uprl').innerHTML = 'Über';
+
+            

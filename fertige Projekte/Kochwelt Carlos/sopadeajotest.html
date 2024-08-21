@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://kochwelt-235.developerakademie.net/img/icons/favicon.ico" type="image/x-icon">
+    <title>Knoblauchsuppe</title>
+    <link rel="stylesheet" href="./sopa.css">
+    <script src="https://kochwelt-235.developerakademie.net/rezeptseiten/rezeptseite-carlos/sopa.js"></script>
+    <script src = "../components/templates/header-component/header.js"></script>
+    <script src="../components/templates/w3-script.js"></script>
+    
+
+</head>
+
+
+<body onload="loadeverything()">
+
+    <div w3-include-html="../components/templates/header-component/header.html"></div>
+
+    <div class="over1990">
+
+        <main class="main">
+            <!-- Start area with presentation image, headline, icons for duration and difficulty and upload date-->
+            <h1 class="mainh1">Sopas de Ajo (Knoblauchsuppe)</h1>
+
+            <div class="topimg"> </div>
+
+            <div class="iconsover">
+                <div class="icons"><img src="https://kochwelt-235.developerakademie.net/img/icons/clock-regular.svg" class="iconimg"> 25 Min.</div>
+                <div class="icons"> <img src="https://kochwelt-235.developerakademie.net/img/icons/brain-solid.svg" class="iconimg">simple</div>
+                <div class="icons"> <img src="https://kochwelt-235.developerakademie.net/img/icons/calendar-alt-regular.svg" class="iconimg">07.06.2024</div>
+            </div>
+
+            <!-- Button area contains 2 buttons. The first to calculate the ingredients for 1 to 20 people, the second to print -->
+            <div class="calc" >
+                <div>Zutaten für</div> <div><input type="number" placeholder="4" id="calcinput" class="inputcalc"><button class="calcbutton" onclick="calc()">Portionen</button></div><button class="printbutton" onclick="print()">Drucken</button>
+            </div>
+    
+            <section class="seclist">
+            <!-- In this section is the ingredient table and the inspiration area -->
+                <table id="list" class="tableover">
+            
+                </table>
+        
+                <div class="seperator"></div>
+            <!-- Inspiration links section -->
+                <div class="recover">
+                    <div class="reclinks">
+                    <h3>Entdecke andere Rezepte</h3>
+                    <a class="reclink" href="https://kochwelt-235.developerakademie.net/rezeptemain/vegan-gyros-recipe.html"><img class="recipeimg" src="https://kochwelt-235.developerakademie.net/img/gyros.jpg">Veganes Gyros mit Pulled Mushrooms</a>
+                    <a class="reclink" href="https://kochwelt-235.developerakademie.net/rezeptemain/index-schweinebraten.html"><img class="recipeimg" src="https://kochwelt-235.developerakademie.net/img/pork-6175779.jpg">Bayrischer Schweinebraten</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="description" >
+         <!-- Section of the process description -->
+            <h2>Zubereitung</h2>
+                <div class="disiconsover">
+                <div class="bicons">ca. 25 Minuten</div>
+                <div class="bicons">Gesamtzeit ca 30 Minuten</div>
+                </div>
+
+            <div class="descriptiontext">
+                In einem Topf den Knoblauch anbraten. <br> Bevor sie Farbe annehmen, das Brot dazugeben und mit Paprika bestreuen.<br>
+                3 Minuten lang das Brot rösten lassen, so dass es sich mit dem Öl vollsaugt.<br>
+                Anschließend mit einem Liter heißem Wasser aufgießen und das Salz hinzufügen.<br> 
+                Eine Viertelstunde kochen lassen. <br>
+                Vor dem Servieren nach und nach zwei geschlagene Eier hinzufügen, damit sie gerinnen.
+
+            </div>
+
+            <div class="profilover">
+              <!-- The author's profile section -->
+                <h3 class="profilheadl"> Rezept erstellt von</h3>
+                <div class="profil">
+                    <img class="profilimg" src="http://kochwelt-235.developerakademie.net/img/Profilbildcarlos.jpg">
+                    <div class="profilname">Carlos</div>
+                </div>    
+            </div>
+
+            </section>
+            <div class="distancekeeper">
+                <div class="dischild"></div>
+            </div>
+        </main>
+
+    </div>
+    
+    <div w3-include-html="../components/templates/footer-component/footer-component.html"></div>
+
+</body>
+
+</html>
