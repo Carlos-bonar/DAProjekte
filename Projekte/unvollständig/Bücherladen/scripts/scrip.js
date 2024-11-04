@@ -4,7 +4,7 @@ let books = [
       "author": "Clara Meer",
       "likes": 1250,
       "liked": true,
-      "price": 19.99,
+      "price": "19.99",
       "publishedYear": 2018,
       "genre": "Fantasy",
       "comments": [
@@ -35,7 +35,7 @@ let books = [
       "author": "Maximilian Schwarz",
       "likes": 980,
       "liked": false,
-      "price": 14.50,
+      "price": "14.50",
       "publishedYear": 2021,
       "genre": "Fantasy",
       "comments": []
@@ -45,7 +45,7 @@ let books = [
       "author": "Laura Blau",
       "likes": 1520,
       "liked": true,
-      "price": 22.95,
+      "price": "22.95",
       "publishedYear": 2019,
       "genre": "Romantik",
       "comments": [
@@ -76,7 +76,7 @@ let books = [
       "author": "Alexander Weiss",
       "likes": 750,
       "liked": false,
-      "price": 18.00,
+      "price": "18.00",
       "publishedYear": 2020,
       "genre": "Science-Fiction",
       "comments": [
@@ -95,7 +95,7 @@ let books = [
       "author": "Sabine Grün",
       "likes": 1300,
       "liked": true,
-      "price": 16.75,
+      "price": "16.75",
       "publishedYear": 2017,
       "genre": "Fantasy",
       "comments": []
@@ -105,7 +105,7 @@ let books = [
       "author": "Philipp Silber",
       "likes": 890,
       "liked": false,
-      "price": 12.30,
+      "price": "12.30",
       "publishedYear": 2022,
       "genre": "Science-Fiction",
       "comments": [
@@ -124,7 +124,7 @@ let books = [
       "author": "Oliver Schwarz",
       "likes": 1450,
       "liked": true,
-      "price": 21.00,
+      "price": "21.00",
       "publishedYear": 2015,
       "genre": "Science-Fiction",
       "comments": [
@@ -139,7 +139,7 @@ let books = [
       "author": "Elena Gold",
       "likes": 920,
       "liked": false,
-      "price": 17.50,
+      "price": "17.50",
       "publishedYear": 2020,
       "genre": "Fantasy",
       "comments": [
@@ -154,7 +154,7 @@ let books = [
       "author": "Emilia Rot",
       "likes": 1800,
       "liked": true,
-      "price": 19.99,
+      "price": "19.99",
       "publishedYear": 2016,
       "genre": "Romantik",
       "comments": [
@@ -174,8 +174,84 @@ let books = [
     }
   ]
 
-  function renderBook(){
-    let contentRef = document.getElementById('content');
-    contentRef.innerHTML = "";
-    contentRef.innerHTML += books[0].name;
+
+
+function renderBooks(){
+  let bookRef = document.getElementById('content');
+        bookRef.innerHTML = "";
+            for (let i=0; i<books.length; i++){
+                bookRef.innerHTML += getBookTemplates(i);
+                renderComments(i);
+            } 
+            for (let c = 0; c<books.length; c++){
+              isliked(c)
+            }
+             
+}
+
+function renderComments(i){
+  let commentRef = document.getElementById(`comments${i}`)
+  commentRef.innerHTML = "";
+  
+  for(let c = 0; c<books[i].comments.length; c++){
+    commentRef.innerHTML += getCommentTemplate(i, c);
   }
+}
+
+//12.09. gemacht und noch mal anschaune, was du genau gemacht hast! 
+function isliked(i){
+  let likeStatus = books[i].liked;
+  let heartImgRef = document.getElementById(`heartImg${i}`)
+
+    if (likeStatus === true){
+      heartImgRef.src = "./IMG/heart (1).png"
+    }
+    else{
+      heartImgRef.src = "./IMG/emptyheart.png"
+    }
+}
+
+
+function like(i){
+  let likeStatus = books[i].liked;
+  let heartImgRef = document.getElementById(`heartImg${i}`);
+  //let likeCountRef = books[i].likes  das hier hat keinen Sinn, da es lediglich eine Kopie erstellt aber nicht den Wert im Array ändert!?! Hä?
+  let likesDOMRef = document.getElementById(`likescounter${i}`);
+
+    if(likeStatus === true){
+      heartImgRef.src = "./IMG/emptyheart.png";
+      books[i].liked = false;
+      books[i].likes--;
+    }
+    else{
+      heartImgRef.src = "./IMG/heart (1).png";
+      books[i].liked = true;
+      books[i].likes++;
+    }
+    likesDOMRef.innerHTML = books[i].likes;
+}
+
+function pushComment(i){
+  let commentImput = document.getElementById(`commentInput${i}`);
+  let userImput = document.getElementById(`nickInput${i}`);
+      let addMustard = commentImput.value;
+      let userNick = userImput.value;
+    if(addMustard === ""){
+      alert("Bitte ein Kommentar eingeben! Danke")
+    }
+    else{
+      if (userNick ===""){
+        alert("bitte geben Sie einen Namen ein")
+      }
+      else{
+        let newComment = {
+          name: userNick,
+          comment: addMustard
+        };
+        books[i].comments.push(newComment);
+      }
+    }
+  renderComments(i);
+  commentImput.value = "";
+  userImput.value = "";
+}

@@ -1,5 +1,4 @@
-//notizen anzeigen
-    //ich brauche notizen
+
     let notesTitle = ['BA', 'Aufgabe', 'bö'];
 
     let notes = ['Banane', 'Rasen mähen', 'Zähne putzen'];
@@ -7,23 +6,19 @@
     let TrashNotesTitle = [];
     let trashNotes = [];
 
-    
     function renderNotes(){
         let contentRef = document.getElementById('content')
-        contentRef.innerHTML ="";
-            
+        contentRef.innerHTML =""; 
 
         for (let indexNote = 0; indexNote < notes.length; indexNote++){
 
             contentRef.innerHTML += getNoteTemplate(indexNote);
         }
-        
     }
 
     function getNoteTemplate(indexNote){
         return `<p> + Title:${notesTitle[indexNote]} -> ${notes[indexNote]}<button onclick="deleteNote(${indexNote})">x</button></p>`;
     }
-   
 
     function addNote(){
         let noteInputRef = document.getElementById('noteInput');
@@ -35,6 +30,7 @@
 
         noteInputRef.value = "";
     }
+    
     function deleteNote(indexNote){
         let trashNote = notes.splice(indexNote, 1);
         let trashNotetitle = notesTitle.splice(indexNote, 1);

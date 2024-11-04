@@ -173,9 +173,3 @@ let books = [
       ]
     }
   ]
-
-  function renderBook(){
-    let contentRef = document.getElementById('content');
-    contentRef.innerHTML = "";
-    contentRef.innerHTML += books[0].name;
-  }

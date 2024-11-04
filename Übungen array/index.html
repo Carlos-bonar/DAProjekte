@@ -6,7 +6,33 @@
     <title>Document</title>
     <script src="hallo.js"></script>
 </head>
-<body>
-    <input type="number" id="inputin"><button onclick="modulotest()">pew pew</button>
+<body onload="renderBook()">
+    <input type="number" id="inputin"><button >pew pew</button>
+    <div id="content">
+        <p></p>
+
+    </div>
+
+    <div class="bookOverOverView" id="bookOverOverView">
+        <div class="bookTitle" id="bookTitle${i}"></div>
+        <div class="bookImg" id="bookIMG${i}"> </div>
+        <div class="priceAndLikes" id="priceAndLikes">
+            <div class="pice" id="price"></div>
+            <div class="likes" id="likes${i}"></div>
+        </div>
+        <div class="description" id="description${i}">
+            <p class="descriptionChild">Author : </p>
+            <p class="descriptionChild">Erscheinungsjahr: </p>
+            <p class="descriptionChild">Genre: </p>
+        </div>
+        <div class="comments" id="comments${i}">
+            <div class="commentsName"></div>
+        </div>
+        <input type="text" class="commentInput" id="commentInput"><button class="pushComment" id="pushComment"><img src="" alt="Teleg."></button>
+    </div>
+
+
+
+
 </body>
 </html>

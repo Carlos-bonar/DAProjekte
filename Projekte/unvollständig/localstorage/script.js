@@ -18,6 +18,7 @@ function saveData(){
 
     render();
     inputRef.value = "";
+
 }
 
 function saveToLocalStorage(){

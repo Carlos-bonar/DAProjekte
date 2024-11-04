@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dammbruch-Simulation mit Topografischen Daten</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="simulation" width="800" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('simulation');
+        const ctx = canvas.getContext('2d');
+        const width = canvas.width;
+        const height = canvas.height;
+        const gridSize = 1;
+        let topography = [];
+        let water = [];
+
+        // Dummy-Daten für die Topografie, falls das Laden der Datei fehlschlägt
+        const dummyTopography = () => {
+            return Array.from({ length: height }, (_, y) =>
+                Array.from({ length: width }, (_, x) => {
+                    const distX = Math.abs(x - width / 2);
+                    const distY = Math.abs(y - height / 2);
+                    return Math.max(0, 50 - Math.sqrt(distX * distX + distY * distY));
+                })
+            );
+        };
+
+        // Laden der topografischen Daten
+        fetch('topography.json')
+            .then(response => response.json())
+            .then(data => {
+                topography = data;
+                water = Array.from({ length: height }, () => Array(width).fill(0));
+                initSimulation();
+            })
+            .catch(error => {
+                console.error('Fehler beim Laden der Daten:', error);
+                // Falls das Laden der Daten fehlschlägt, verwende Dummy-Daten
+                topography = dummyTopography();
+                water = Array.from({ length: height }, () => Array(width).fill(0));
+                initSimulation();
+            });
+
+        // Dammbruch-Simulation
+        const simulateDamBreak = (breakPosition, breakWidth, depth) => {
+            for (let y = 0; y < height; y++) {
+                for (let x = Math.max(0, breakPosition - breakWidth); x < Math.min(width, breakPosition + breakWidth); x++) {
+                    if (x >= 0 && x < width) {
+                        topography[y][x] -= depth * Math.max(0, 1 - Math.abs(x - breakPosition) / (breakWidth / 2));
+                    }
+                }
+            }
+        };
+
+        // Berechnung des Wasserflusses
+        const calculateWaterFlow = () => {
+            const flow = Array.from({ length: height }, () => Array(width).fill(0));
+            const gravity = 0.1;
+            const friction = 0.02;
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    if (topography[y][x] < 0) {
+                        const waterLevel = Math.abs(topography[y][x]);
+                        water[y][x] = waterLevel;
+                        flow[y][x] = waterLevel * gravity;
+
+                        // Einfacher Wasserfluss nach unten
+                        if (y + 1 < height) {
+                            water[y + 1][x] += flow[y][x] * (1 - friction);
+                            water[y][x] -= flow[y][x] * friction;
+                        }
+                    }
+                }
+            }
+            return flow;
+        };
+
+        // Zeichnen der Simulation
+        const drawSimulation = (flow) => {
+            ctx.clearRect(0, 0, width, height);
+
+            // Zeichnen der Topografie
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const topColor = Math.min(255, 255 - topography[y][x] * 5);
+                    ctx.fillStyle = `rgb(${topColor}, ${topColor}, ${topColor})`;
+                    ctx.fillRect(x, y, gridSize, gridSize);
+                }
+            }
+
+            // Zeichnen des Wasserflusses
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    if (water[y][x] > 0) {
+                        ctx.fillStyle = `rgba(0, 0, 255, ${Math.min(1, water[y][x] / 100)})`;
+                        ctx.fillRect(x, y, gridSize, gridSize);
+                    }
+                }
+            }
+        };
+
+        // Initialisierung der Simulation
+        const initSimulation = () => {
+            const breakPosition = width / 2;
+            const breakWidth = 100;
+            const breakDepth = 20;
+
+            simulateDamBreak(breakPosition, breakWidth, breakDepth);
+            const waterFlow = calculateWaterFlow();
+            drawSimulation(waterFlow);
+        };
+
+    </script>
+</body>
+</html>

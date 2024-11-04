@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('/mnt/data/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+* {
+    --sb-track-color: #0c0c0c;
+    --sb-thumb-color: #7cc9e9;
+    --sb-size: 2px;
+  }
+  
+  *::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 6px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 6px;
+    
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }
+
+body{
+    font-family: 'OpenSans', sans-serif;
+    margin: 0;
+    background-color: rgb(5, 23, 30);
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    background-color: rgb(9, 32, 42);
+    color: white;
+}
+.DA{
+    color: rgb(255, 89, 63);
+}
+
+.overdiv{
+    border: solid, 1px, greenyellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bookOverOverView{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+
+.bookTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(13, 50, 64);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.bookImg{
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: rgb(18, 71, 88);
+}
+
+.bookIMG{
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    height: 84px;
+}
+
+.seperator{
+    background-color: rgb(128, 194, 222);
+    height: 2px;
+    width: 100%;
+}
+
+.priceAndLikes{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-top: 24px;
+    background-color: rgb(13, 50, 64);
+}
+
+.pice{
+    color: red;
+    margin-left: 8px;
+}
+
+.likes{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.likeButton{
+    width: 22px;
+    height: 22px;
+    border: none;
+    padding: 0;
+    background-color: rgb(13, 50, 64);
+    border-radius: 100%;
+}
+
+.likeButton:hover{
+    cursor: pointer;
+    background-color: rgb(19, 74, 94);
+}
+
+.heartImgs{
+    margin-top: 4px;
+}
+
+.description{
+    padding-left: 8px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(13, 50, 64);
+}
+
+.descriptionChild{
+    margin: 0;
+    display: flex;
+}
+
+.descriptionElement{
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 105px;
+}
+
+.span{
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.comments{
+    color: white;
+    height: 165px;
+    padding-left: 8px;
+    padding-top: 8px;
+    overflow: auto;
+    background-color: rgb(13, 50, 64);
+}
+
+.commentHeadline{
+    font-weight: bold;
+}
+
+.p-Comments{
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.commentAutor{
+    font-size: 12px;
+    min-width: 105px;
+}
+
+.realComment{
+    font-size: 10px;
+    margin-right: 4px;
+}
+
+.commentPush{
+    display: flex;
+    background-color: rgb(13, 50, 64);
+    border-bottom-right-radius: 8px;
+}
+
+.inputOverdiv{
+    padding-left: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    background-color: rgb(13, 50, 64);
+}
+
+.commentInput{
+    border-radius: 0;
+    background-color: rgb(18, 72, 87);
+    color: rgb(128, 169, 184);
+    border: none;
+    font-size: 8px;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.inputUnderline{
+    background-color: rgb(128, 194, 222);
+    height: 1px;
+    width: 100%;
+}
+
+.buttonDiv{
+    background-color: rgb(13, 50, 64);
+    border: none;
+    border-bottom-right-radius: 8px;
+    padding-top: 8px;
+    padding-right: 8px;
+    height: 22px;
+    width: 22px;
+}
+
+.pushComment{
+    padding: 0;
+    margin-left: 4px;
+    background-color: rgb(13, 50, 64);
+    border: none;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.pushComment:hover{
+    background-color: rgb(19, 74, 94);
+}
