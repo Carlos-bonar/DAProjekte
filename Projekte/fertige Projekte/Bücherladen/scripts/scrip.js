@@ -173,13 +173,15 @@ let books = [
       ]
     }
   ]
+  
 
-
-
+  
 function renderBooks(){
   let bookRef = document.getElementById('content');
         bookRef.innerHTML = "";
             for (let i=0; i<books.length; i++){
+                getFromLocalStorageComments(i);
+                getFromLocalStoragelikes(i);
                 bookRef.innerHTML += getBookTemplates(i);
                 renderComments(i);
             } 
@@ -197,6 +199,41 @@ function renderComments(i){
     commentRef.innerHTML += getCommentTemplate(i, c);
   }
 }
+
+function saveToLocalStorageLikes(i){
+  localStorage.setItem(`likes${i}`, JSON.stringify(books[i].likes));
+  localStorage.setItem(`liked${i}`, JSON.stringify(books[i].liked));
+}
+
+function saveToLocalStorageComments(i){
+  localStorage.setItem(`comments${i}`, JSON.stringify(books[i].comments));
+}
+
+function getFromLocalStoragelikes(i){
+  let likesRef = JSON.parse(localStorage.getItem(`likes${i}`));
+  let likedRef = JSON.parse(localStorage.getItem(`liked${i}`));
+
+  if(likesRef === null || likedRef === null){
+    return;
+  }
+  else{
+    books[i].likes = likesRef;
+    books[i].liked = likedRef;
+  }
+}
+
+function getFromLocalStorageComments(i){
+  let commentsRef = JSON.parse(localStorage.getItem(`comments${i}`));
+
+  if(commentsRef === null ){
+    return;
+  }
+  else{
+    books[i].comments = commentsRef;
+  }
+
+}
+
 
 //12.09. gemacht und noch mal anschaune, was du genau gemacht hast! 
 function isliked(i){
@@ -229,29 +266,30 @@ function like(i){
       books[i].likes++;
     }
     likesDOMRef.innerHTML = books[i].likes;
+    saveToLocalStorageLikes(i);
 }
 
 function pushComment(i){
-  let commentImput = document.getElementById(`commentInput${i}`);
-  let userImput = document.getElementById(`nickInput${i}`);
-      let addMustard = commentImput.value;
-      let userNick = userImput.value;
-    if(addMustard === ""){
+  let addMustard = document.getElementById(`commentInput${i}`);
+  let userNick = document.getElementById(`nickInput${i}`);
+
+    if(addMustard.value === ""){
       alert("Bitte ein Kommentar eingeben! Danke")
     }
     else{
-      if (userNick ===""){
+      if (userNick.value ===""){
         alert("bitte geben Sie einen Namen ein")
       }
       else{
         let newComment = {
-          name: userNick,
-          comment: addMustard
+          name: userNick.value,
+          comment: addMustard.value
         };
         books[i].comments.push(newComment);
       }
     }
+  saveToLocalStorageComments(i);
   renderComments(i);
-  commentImput.value = "";
-  userImput.value = "";
+  addMustard.value = "";
+  userNick.value = "";
 }

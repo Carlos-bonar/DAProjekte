@@ -28,7 +28,7 @@ function saveToLocalStorage(){
 function getFromLocalStorage(){
     let myArray = JSON.parse(localStorage.getItem("myData"));
     if(myArray == null){
-        return 0;
+        return;
     }
     else{
     myData = myArray;    
